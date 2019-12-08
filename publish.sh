@@ -1,45 +1,55 @@
 #!/usr/bin/env sh
 
-BRANCH="docs"
-FOLDER="_book"
+# add _book and _publish to your .gitginore
 
-if [ "`git status -s`" ]
+REMOTE="origin"
+BRANCH="docs"
+GITBOOK_FOLDER="_book"
+PUBLISH_FOLDER="_publish"
+
+if ! git diff-files --quiet --ignore-submodules --
 then
     echo "The working directory is dirty. Please commit any pending changes."
     exit 1;
 fi
+echo "Switching to master branch"
+git checkout master
 
 echo "Deleting old publication"
-rm -rf ${FOLDER}
-mkdir ${FOLDER}
-git worktree prune
-
-echo "Checking out ${BRANCH} branch into ${FOLDER}"
-git worktree add -B ${BRANCH} ${FOLDER} origin/${BRANCH}
-
-echo "Removing existing files"
-rm -rf ${FOLDER}/* ${FOLDER}/.*
+rm -rf ${GITBOOK_FOLDER}
 
 echo "Generating site"
-if test ! $(which npx); then
-    echo "nodejs npx is not installed. exiting."
+if test $(which gitbook); then
+    gitbook build .
+elif test $(which npx); then
+    npx gitbook-cli build .
+else
+    echo "gitbook-cli can't be found"
     exit 1
 fi
-npx gitbook-cli build .
 
-echo "Writing CNAME file"
+echo "Preparing publish folder"
+rm -rf ${PUBLISH_FOLDER} && mkdir ${PUBLISH_FOLDER}
+git worktree prune
+echo "Checking out ${BRANCH} branch into the publish folder"
+git worktree add -B ${BRANCH} ${PUBLISH_FOLDER} --no-checkout
+
+echo "Moving gitbook to publish folder"
+mv ${GITBOOK_FOLDER}/* ${PUBLISH_FOLDER}
+
+echo "Adding the CNAME file"
 if [ ! -f ./CNAME ]; then
     read -p "Enter the production URL (e.g. myblog.idontknow.com): " PRODUCTION_URL
-    echo "$PRODUCTION_URL" > ${FOLDER}/CNAME
+    echo "${PRODUCTION_URL}" > ${PUBLISH_FOLDER}/CNAME
 else
-    cp CNAME ${FOLDER}/CNAME
+    cp CNAME ${PUBLISH_FOLDER}/CNAME
 fi
 
 echo "Updating ${BRANCH} branch"
-cd ${FOLDER} && git add --all && git commit -m "Publishing to ${BRANCH} (publish.sh)" && cd ..
+cd ${PUBLISH_FOLDER} && git add --all && git commit -m "Update (publish.sh)" && cd ..
 
-echo "Pushing to github"
-git push origin +${BRANCH}
+echo "Pushing to ${REMOTE}"
+git push ${REMOTE} +${BRANCH}
 
-echo "Finished, cleaning up"
-rm -rf ${FOLDER}
+echo "Cleaning up"
+rm -rf ${GITBOOK_FOLDER} ${PUBLISH_FOLDER}
