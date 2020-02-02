@@ -36,11 +36,16 @@ git worktree add -B ${BRANCH} ${PUBLISH_FOLDER} --no-checkout
 
 echo "Moving gitbook to publish folder"
 mv ${GITBOOK_FOLDER}/* ${PUBLISH_FOLDER}
+touch ${PUBLISH_FOLDER}/.nojekyll
 
-echo "Adding the CNAME file"
+echo "Adding the CNAME file, hit Enter to bypass"
 if [ ! -f ./CNAME ]; then
     read -p "Enter the production URL (e.g. myblog.idontknow.com): " PRODUCTION_URL
-    echo "${PRODUCTION_URL}" > ${PUBLISH_FOLDER}/CNAME
+    if [ -z "${PRODUCTION_URL}" ]; then
+        echo "No CNAME created."
+    else
+        echo "${PRODUCTION_URL}" > ${PUBLISH_FOLDER}/CNAME
+    fi
 else
     cp CNAME ${PUBLISH_FOLDER}/CNAME
 fi
