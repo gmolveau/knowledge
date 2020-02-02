@@ -3,7 +3,7 @@
 # add _book and _publish to your .gitginore
 
 REMOTE="origin"
-BRANCH="docs"
+BRANCH="gh-pages"
 GITBOOK_FOLDER="_book"
 PUBLISH_FOLDER="_publish"
 
