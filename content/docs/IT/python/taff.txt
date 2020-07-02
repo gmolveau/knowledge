@@ -1,0 +1,14 @@
+gitlab ci
+python
+cookie cutter
+
+https://dglloyd.net/2018/09/12/cookiecutter-flask-and-gitlab-ci/
+https://docs.gitlab.com/ee/ci/examples/test-and-deploy-python-application-to-heroku.html
+https://www.patricksoftwareblog.com/setting-up-gitlab-ci-for-a-python-application/
+https://www.supinfo.com/articles/single/6822-integration-continue-gitlab-gitlab-ci-cd
+
+https://github.com/audreyr/cookiecutter-pypackage
+
+https://github.com/MartinHeinz/python-project-blueprint
+
+https://www.integralist.co.uk/posts/python-asyncio/
