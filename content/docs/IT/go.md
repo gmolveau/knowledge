@@ -52,6 +52,8 @@ https://medium.com/golangspec/sync-rwmutex-ca6c6c3208a0
 https://www.alexedwards.net/blog/understanding-mutexes
 https://stackoverflow.com/questions/19148809/how-to-use-rwmutex-in-golang
 
+https://www.youtube.com/watch?v=f6kdp27TYZs Google I/O 2012 - Go Concurrency Patterns by Rob Pike
+https://youtu.be/QDDwwePbDtw Google I/O 2013 - Advanced Go Concurrency Patterns by Sameer Ajmani 
 - a voir la qualité >
 - https://dev.to/dannypsnl/testing-in-go-35ei
 - https://dev.to/quii/learn-go-by-writing-tests--m63
