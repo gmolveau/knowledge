@@ -23,6 +23,8 @@ https://medium.com/@eminetto/clean-architecture-using-golang-b63587aa5e3f
 
 https://github.com/err0r500/go-realworld-clean
 
+https://threedots.tech/post/introducing-clean-architecture/
+
 Go Design Patterns
 ==================
 
@@ -49,3 +51,9 @@ https://medium.com/@anto_rayen/understanding-locks-rwmutex-in-golang-3c468c65062
 https://medium.com/golangspec/sync-rwmutex-ca6c6c3208a0
 https://www.alexedwards.net/blog/understanding-mutexes
 https://stackoverflow.com/questions/19148809/how-to-use-rwmutex-in-golang
+
+- a voir la qualité >
+- https://dev.to/dannypsnl/testing-in-go-35ei
+- https://dev.to/quii/learn-go-by-writing-tests--m63
+- https://dev.to/gypsydave5/learn-go-by-writing-tests-concurrency--2ebk
+- https://dev.to/jankaritech/demonstrating-tdd-test-driven-development-in-go-27b0
