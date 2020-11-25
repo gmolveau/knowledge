@@ -1,3 +1,0 @@
-# Quotes I like
-
-*  test
