@@ -1,3 +1,9 @@
+# Django
+
+https://developer.mozilla.org/fr/docs/Learn/Server-side/Django
+
+https://docs.djangoproject.com/en/4.0/intro/tutorial01/
+
 https://github.com/nickjj/docker-django-example
 
 https://news.ycombinator.com/item?id=29472349
