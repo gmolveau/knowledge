@@ -16,3 +16,5 @@ http://sled.rs/errors
 https://medium.com/better-programming/rest-api-in-rust-step-by-step-guide-b8a6c5fcbff0
 
 https://blog.logrocket.com/how-to-build-a-websocket-server-with-rust/
+
+https://www.possiblerust.com/guide/how-to-read-rust-functions-part-1
