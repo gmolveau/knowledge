@@ -13,3 +13,14 @@ Since all Linux distributions run the same (yup, it's a bit simplified) Linux ke
 So lightweight virtualization is like having isolated compartments within same OS. Au contraire real virtualization is having another full-fledged OS inside host OS. That's why docker cannot run FreeBSD or Windows inside Linux.
 
 If that would be easier, you can think docker is kind of very sophisticated and advanced chroot environment.
+
+---
+
+https://github.com/GoogleContainerTools/distroless/blob/master/base/README.md
+https://github.com/GoogleContainerTools/distroless/blob/master/examples/go/Dockerfile
+
+https://hackernoon.com/distroless-containers-hype-or-true-value-2rfl3wat
+https://timberry.dev/posts/building-go-containers-cloud-run/
+
+https://enix.io/fr/blog/cherie-j-ai-retreci-docker-part2/
+https://blog.depa.do/post/small-secure-docker-golang
