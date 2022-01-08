@@ -153,6 +153,8 @@ filter : filter via a boolean function
 reduce : accumulation
 
 iterator : __next__(), __iter__(), __getitem__()
+sequence : __len__(), __getitem__()
+    all sequences are iterable
 
 # Inheritance and Subtype Polymorphism
 
@@ -318,7 +320,7 @@ Formatting
 Whitespace
 Naming
 
-pyliny
+pylint
 pycodestyle
 black
 
