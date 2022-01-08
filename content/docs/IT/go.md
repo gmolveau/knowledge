@@ -8,9 +8,13 @@ Courses
 - https://ednsquare.com/story/learn-go-beginners-guide-to-learn-golang-from-scratch-------gTmFx6 (free)
 - https://quii.gitbook.io/learn-go-with-tests/
 
+- https://rytisbiel.com/2021/03/06/darker-corners-of-go/
+
 
 Clean Architecture / Hexagonal Architecture
 ===========================================
+
+- https://blog.octo.com/architecture-hexagonale-trois-principes-et-un-exemple-dimplementation/
 
 - Building Hexagonal Microservices with Go
     - le code : https://github.com/tensor-programming/hex-microservice/tree/part-1 
@@ -28,6 +32,10 @@ Clean Architecture / Hexagonal Architecture
 - https://github.com/err0r500/go-realworld-clean
 
 - https://threedots.tech/post/introducing-clean-architecture/
+
+- https://github.com/ThreeDotsLabs/wild-workouts-go-ddd-example
+
+- https://github.com/AkbaraliShaikh/denti
 
 Go Design Patterns
 ==================
@@ -77,3 +85,11 @@ Unit testing
 - https://dev.to/ilyakaznacheev/how-i-write-my-unit-tests-in-go-quickly-4bd5
 
 - https://ednsquare.com/story/golang-the-essential-guide-to-unit-testing-in-golang------0HkRA4
+
+
+MISC
+====
+
+```bash
+go list -f "{{if .CgoFiles}}{{.ImportPath}}{{end}}" $(go list -f "{{.ImportPath}}{{range .Deps}} {{.}}{{end}}")
+```
