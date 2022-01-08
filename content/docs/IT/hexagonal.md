@@ -23,3 +23,27 @@ ensuite t'implémentes l'infra selon le port que t'as défini, qui va concrètem
 et tu peux dev la sortie, que ça soit une API qui appelle ton business (toujours en passant par les ports hein) ou un job ou un script
 
 https://blog.octo.com/architecture-hexagonale-trois-principes-et-un-exemple-dimplementation/
+
+---
+
+https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/
+
+https://www.qwan.eu/2020/08/20/hexagonal-architecture.html
+
+https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749
+
+https://tpierrain.blogspot.com/2020/03/hexagonal-architecture-dont-get-lost-on.html
+
+https://wkrzywiec.medium.com/ports-adapters-architecture-on-example-19cab9e93be7
+
+https://alexgrover.me/posts/python-hexagonal-architecture
+
+https://beyondxscratch.com/fr/2018/09/11/architecture-hexagonale-le-guide-pratique-pour-une-clean-architecture/
+
+---
+
+testing 
+
+https://gustavohenrique.net/2019/01/e2e-testing-using-docker-cypress-vuejs-golang-postgres/
+
+https://beyondxscratch.com/2019/08/26/implementing-functional-tests-in-domain-driven-design-hexagonal-architecture-using-cucumber-domain-driven-testing/
