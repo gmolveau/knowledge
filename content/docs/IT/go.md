@@ -17,7 +17,7 @@ Clean Architecture / Hexagonal Architecture
 - https://blog.octo.com/architecture-hexagonale-trois-principes-et-un-exemple-dimplementation/
 
 - Building Hexagonal Microservices with Go
-    - le code : https://github.com/tensor-programming/hex-microservice/tree/part-1 
+    - le code : https://github.com/tensor-programming/hex-microservice/tree/part-1
         - bien checker la branche sur github, ya part 1, 2 et 3
     - Part 1 https://youtu.be/rQnTtQZGpg8
     - Part 2 https://youtu.be/xUYDkiPdfWs
@@ -65,7 +65,7 @@ Concurrency
 - https://stackoverflow.com/questions/19148809/how-to-use-rwmutex-in-golang
 
 - https://www.youtube.com/watch?v=f6kdp27TYZs Google I/O 2012 - Go Concurrency Patterns by Rob Pike
-- https://youtu.be/QDDwwePbDtw Google I/O 2013 - Advanced Go Concurrency Patterns by Sameer Ajmani 
+- https://youtu.be/QDDwwePbDtw Google I/O 2013 - Advanced Go Concurrency Patterns by Sameer Ajmani
 
 - a voir la qualité >
     - https://dev.to/dannypsnl/testing-in-go-35ei
@@ -93,3 +93,38 @@ MISC
 ```bash
 go list -f "{{if .CgoFiles}}{{.ImportPath}}{{end}}" $(go list -f "{{.ImportPath}}{{range .Deps}} {{.}}{{end}}")
 ```
+
+A TRIER
+=======
+
+- https://github.com/eminetto/clean-architecture-go-v2 [ok]
+
+    api/ (left-side)
+    api/presenter (interessant a garder pour pas oublier de refaire une struct de prez)
+    cmd/ (left-side)
+    pkg/password (interessant a garder)
+
+    usecase/user/interface - interessant car decouplage writer / reader CQRS
+
+    usecase/book/inmem - interessant implementation temporaire pour fake
+
+    implementation DDD avec use-case - peut etre interessant pour reference plus tard
+
+    makefile avec mockgen de call et autres fonctions utiles
+
+    docker-compose complet avec prometheus + mysql + grafana mais il manque son app
+
+session based cookie auth
+
+- https://stackoverflow.com/questions/15374374/is-there-a-go-framework-or-package-that-provides-canned-user-authentication-supp
+- https://curtisvermeeren.github.io/2018/05/13/Golang-Gorilla-Sessions.html
+- https://github.com/lpar/pasetosession/blob/trunk/example/main.go
+- https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/06.1.html
+- https://www.sohamkamani.com/golang/session-based-authentication/
+- https://www.calhoun.io/securing-cookies-in-go/
+- https://gowebexamples.com/sessions/
+- https://stackoverflow.com/questions/35252253/golang-session-based-authentication
+- https://stackoverflow.com/questions/63212476/is-it-a-good-practice-to-store-auth-session-in-the-database
+- https://auth0.com/docs/sessions/cookies
+
+https://dev.to/he110/circuitbreaker-pattern-in-go-43cn

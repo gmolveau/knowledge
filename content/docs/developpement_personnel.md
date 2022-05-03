@@ -32,7 +32,7 @@ trust
 2. I signal my behaviour (be honest)
 3. I do what I say I'm going to do
 
-ressources
+resources
 ----------
 
 Victor Ferry - En finir avec les accords Toltèques https://youtu.be/mAPLJl8xs_Q

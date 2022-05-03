@@ -30,3 +30,7 @@ Any decision can be made small by just always making sure that if you were wrong
 (and you will be wrong), you can always undo the damage later by backtracking. 
 Suddenly, you get to be doubly managerial for making two inconsequential decisions - 
 the wrong one and the right one.
+
+- 
+
+> First and foremost, I am successful if the folks I work with understand how business decisions tie into their day-to-day work.
