@@ -35,4 +35,5 @@ trust
 resources
 ----------
 
-Victor Ferry - En finir avec les accords Toltèques https://youtu.be/mAPLJl8xs_Q
+- Victor Ferry - En finir avec les accords Toltèques https://youtu.be/mAPLJl8xs_Q
+- https://supermemo.guru/wiki/Genius_checklist

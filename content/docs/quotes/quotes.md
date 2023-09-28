@@ -1,3 +1,5 @@
-# Quotes I like
+# Quotes
 
-*  test
+> "When Boris entered the room, Prince Andrey was listening to an old general, wearing his decorations, who was reporting something to Prince Andrey, with an expression of soldierly servility on his purple face. “Alright. Please wait!” he said to the general, speaking in Russian with the French accent which he used when he spoke with contempt. The moment he noticed Boris he stopped listening to the general who trotted imploringly after him and begged to be heard, while Prince Andrey turned to Boris with a cheerful smile and a nod of the head. Boris now clearly understood—what he had already guessed—that side by side with the system of discipline and subordination which were laid down in the Army Regulations, there existed a different and more real system—the system which compelled a tightly laced general with a purple face to wait respectfully for his turn while a mere captain like Prince Andrey chatted with a mere second lieutenant like Boris. Boris decided at once that he would be guided not by the official system but by this other unwritten system." 
+>
+> -- War and Peace

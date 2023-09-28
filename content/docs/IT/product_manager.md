@@ -41,3 +41,7 @@ Just be very good at measuring and presenting data from all the channels in your
 Understand the real cost of each feature. That's not easy. Try to predict the real value of each feature. That can be even harder. How many customers are asking for that feature? What's the avg LTV of that cohort? Will the feature reduce churn? By what percentage? Own those metrics and tell the whole company that's why you're prioritizing those specific features.
 
 Be prepared to go back and check your assumptions and see if your predictions were correct...If you were wrong, then your next job is figuring out why and then working towards improving your own models to predict the value/cost of each feature. The fact is once you start intensely measuring that type of data, you'll find lots of gaps in your own process and fixing it as you go. 
+
+## Resources
+
+- https://jacobian.org/2021/oct/20/simple-pm-tricks/
