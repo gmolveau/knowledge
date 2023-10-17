@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/it/go/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/it/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/go/go/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/go/go/</guid>
+      <description>Courses # https://testwithgo.com/#buy
+https://www.calhoun.io/moving-towards-domain-driven-design-in-go/?__s=gqaghnpg3ivlqw57uu4x
+https://www.calhoun.io/courses
+https://lets-go.alexedwards.net/#packages
+https://ednsquare.com/story/learn-go-beginners-guide-to-learn-golang-from-scratch-------gTmFx6 (free)
+https://quii.gitbook.io/learn-go-with-tests/
+https://rytisbiel.com/2021/03/06/darker-corners-of-go/
+Clean Architecture / Hexagonal Architecture # https://blog.octo.com/architecture-hexagonale-trois-principes-et-un-exemple-dimplementation/
+Building Hexagonal Microservices with Go
+le code : https://github.com/tensor-programming/hex-microservice/tree/part-1 bien checker la branche sur github, ya part 1, 2 et 3 Part 1 https://youtu.be/rQnTtQZGpg8 Part 2 https://youtu.be/xUYDkiPdfWs Part 3 https://youtu.be/QyBXz9SpPqE https://medium.com/@eminetto/clean-architecture-using-golang-b63587aa5e3f
+https://github.com/eminetto/clean-architecture-go https://eltonminetto.net/en/post/2020-07-06-clean-architecture-2years-later/
+https://github.com/eminetto/clean-architecture-go-v2 https://github.com/err0r500/go-realworld-clean
+https://threedots.tech/post/introducing-clean-architecture/
+https://github.com/ThreeDotsLabs/wild-workouts-go-ddd-example
+https://github.com/AkbaraliShaikh/denti
+Go Design Patterns # Part 1 - The Decorator Pattern - https://youtu.be/F365lY5ECGY?list=WL Part 2 - Generator Pattern and Observer Pattern - https://youtu.</description>
+    </item>
+    
+  </channel>
+</rss>

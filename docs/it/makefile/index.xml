@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/it/makefile/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/it/makefile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/makefile/makefile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/makefile/makefile/</guid>
+      <description> Makefile # Resources # https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html https://gist.github.com/gmolveau/a6331c21e8973f4a1ea51185096e37b8 https://tech.davis-hansson.com/p/make/ https://betterprogramming.pub/my-ultimate-makefile-for-golang-projects-fcc8ca20c9bb </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/it/security/cors/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/it/security/cors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/security/cors/cors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/security/cors/cors/</guid>
+      <description> CORS # Resources # https://nikofischer.com/cors-does-not-secure-api-endpoints https://news.ycombinator.com/item?id=30320113 https://jakearchibald.com/2021/cors/ </description>
+    </item>
+    
+  </channel>
+</rss>

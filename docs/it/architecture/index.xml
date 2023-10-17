@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/it/architecture/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/it/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/architecture/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/architecture/architecture/</guid>
+      <description> Architecture # Resources # http://www.cs.cmu.edu/afs/cs/project/vit/ftp/pdf/intro_softarch.pdf https://wa.aws.amazon.com/index.fr.html https://betterprogramming.pub/modern-day-architecture-design-patterns-for-software-professionals-9056ee1ed977 </description>
+    </item>
+    
+  </channel>
+</rss>

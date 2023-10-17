@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/it/css/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/it/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/css/css/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/css/css/</guid>
+      <description> CSS # Resources # https://engineering.kablamo.com.au/posts/2023/media-queries-and-responsive-design/ https://www.mikeaparicio.com/posts/2023-05-22-why-were-bad-at-css/ https://ethanmarcotte.com/wrote/responsive-design-at-11-container-queries/ </description>
+    </item>
+    
+  </channel>
+</rss>

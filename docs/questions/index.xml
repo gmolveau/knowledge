@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/questions/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/questions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/questions/questions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/questions/questions/</guid>
+      <description>Les questions pour comprendre un sujet:
+QUESTIONS DE VÉRITÉ
+Comment sait-on que c’est vrai? Qu&amp;rsquo;est-ce qui vous permet de dire ça? Comment le savez vous? Quelles sont vos preuves? QUESTIONS DE CURIOSITÉ
+Qu&amp;rsquo;est-ce que c&amp;rsquo;est? Comment ça marche? À quoi ça ressemble? Qu’est-ce qu’il y a à l’intérieur? QUESTIONS DE CAUSALITÉ
+D&amp;rsquo;où ça vient? Pourquoi ça se passe comme ça? Qu&amp;rsquo;est-ce qui explique ça? Comment en sommes-nous arrivés là? QUESTIONS D&amp;rsquo;EMPATHIE</description>
+    </item>
+    
+  </channel>
+</rss>

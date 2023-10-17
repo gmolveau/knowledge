@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT on Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/it/</link>
+    <description>Recent content in IT on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/it/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/agile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/agile/</guid>
+      <description>https://ronjeffries.com/articles/018-01ff/abandon-1/
+https://www.amazingcto.com/why-we-always-endup-with-waterfall-even-scrum/
+https://news.ycombinator.com/item?id=29458066</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/analytics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/analytics/</guid>
+      <description> cloud # https://plausible.io/#pricing https://www.goatcounter.com/ https://usefathom.com/ self-hosted # matomo https://umami.is/ </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/containers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/containers/</guid>
+      <description>Docker does not has an OS in its containers. In simple terms, a docker container image just has a kind of filesystem snapshot of the linux-image the container image is dependent on.
+The container-image includes some basic programs like bash-shell, vim-editor etc to facilitate developer to work easily with the docker image. Also, docker images can include pre-installed dependencies like nodeJS, redis-server etc as we can find on docker hub.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/courses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/courses/</guid>
+      <description>https://refactoring.guru/refactoring/course https://refactoring.guru/design-patterns/book
+https://software.af.mil/training/</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/css/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/css/</guid>
+      <description>CSS # Flexbox # Twitter tweet layout with css flexbox https://codepen.io/moshfequr9/pen/wXQbPR Learn CSS Flexbox by building a photo card component https://freshman.tech/flexbox/ Flexbox Nav Bar with Fixed, Variable, and Take-Up-The-Rest Elements https://css-tricks.com/flexbox-nav-bar-fixed-variable-take-rest-elements/ Create Classic Card Layout with Flexbox CSS https://dev.to/vguleaev/create-classic-card-layout-with-flexbox-css-32fc learn flexbox with froggy https://flexboxfroggy.com/#fr
+https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Flexbox_skills https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Flexbox
+https://la-cascade.io/flexbox-guide-complet/ https://la-cascade.io/css-flexbox-et-lalignement-guide-complet/
+https://www.freecodecamp.org/news/learn-flexbox-common-use-cases/
+http://lab-sticc.univ-brest.fr/~leparc/Etud/Licence/IntroInfo/WebPascal/TP9_Web.pdf https://ptitim.github.io/Flex/indexexo.html https://mescours.ovh/ex10.html https://eneax.github.io/learn-flexbox/
+Grid # Building the old Twitter layout using CSS Grid https://medium.com/quick-code/building-the-old-twitter-layout-using-css-grid-9aeee2260ba4 twitter thread - quick guide to CSS Grid layout https://twitter.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/cto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/cto/</guid>
+      <description>lead - CTO # https://news.ycombinator.com/item?id=29571126 # &amp;ldquo;This is great insight. I&amp;rsquo;d like to offer a slight alternative for &amp;ldquo;You just kind of have to minimize the wrongness&amp;rdquo;.
+I think a CTO should have several mental models for making decisions. Minimizing wrongness is just one.
+Some examples:
+Is this decision reversible?
+Does this choice allow my team to grow technically?
+Will this matter a year from now?
+Is this something I can buy instead of build?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/django/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/django/</guid>
+      <description>Django # https://developer.mozilla.org/fr/docs/Learn/Server-side/Django
+https://docs.djangoproject.com/en/4.0/intro/tutorial01/
+https://github.com/nickjj/docker-django-example
+https://news.ycombinator.com/item?id=29472349
+Django has allowed me to enjoy some side entrepreneurship. I have released three products as a solo part time dev that I would never have been able to do in a reasonable time using Java/Spring (my strongest stack). My first project went nowhere, but the second generated 1k+ a month and sold for 50k, and the third one is following a similar trajectory. My advice - keep it simple - function based views - centralize access to the ORM (avoid fat models, use a service layer) - responsive bootstrap template with crispy forms - minimal js - 12 factor type setup - django-environ or similar - be aware of n+1 select problem (I use django debug toolbar but looking into django-zen-queries) - plop it on heroku, AWS lightsail, Digital Ocean or if containerizing use AWS Fargate - avoid celery unless you are at a scale you need it - use django-cron, django-db-queue or similar - use a managed database and managed email service I have had zero scalability problems.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/flask/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/flask/</guid>
+      <description> flask # https://wakatime.com/blog/32-flask-part-1-sqlalchemy-models-to-json
+celery # https://blog.miguelgrinberg.com/post/celery-and-the-flask-application-factory-pattern https://testdriven.io/blog/flask-and-celery/ https://github.com/stefanondisponibile/flask_celery/ https://medium.com/@frassetto.stefano/flask-celery-howto-d106958a15fe https://stackabuse.com/asynchronous-tasks-using-flask-redis-and-celery/ https://flask.palletsprojects.com/en/2.0.x/patterns/celery/ json # https://arunmozhi.in/2019/07/26/simplifying-json-parsing-in-flask-routes-using-decorators/ https://arunmozhi.in/2019/08/16/parsing-validating-json-in-flask-requests/
+https://pypi.org/project/flask-expects-json/ https://medium.com/analytics-vidhya/server-validation-in-flask-api-with-json-schema-963aa05e305f
+cookiecutter # https://github.com/karec/cookiecutter-flask-restful https://github.com/tiangolo/full-stack-fastapi-postgresql https://github.com/cookiecutter-flask/cookiecutter-flask </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/frontend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/frontend/</guid>
+      <description> Front-End (html, css, js) # https://alpinejs.dev/
+https://htmx.org/
+&amp;lt;button hx-post=&amp;#34;/clicked&amp;#34; hx-swap=&amp;#34;outerHTML&amp;#34;&amp;gt; Click Me &amp;lt;/button&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/grpc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/grpc/</guid>
+      <description>GRPC # https://kreya.app/blog/grpc-best-practices/</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/hexagonal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/hexagonal/</guid>
+      <description>Clean architecture by Robert &amp;ldquo;Uncle Bob&amp;rdquo; Martin https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/ (2017)
+example Architecture the Lost Years http://www.youtube.com/watch?v=WpkDN78P884 (2011) Onion Architecture by Jeffrey Palermo http://jeffreypalermo.com/blog/the-onion-architecture-part-1/ (2008)
+Hexagonal Architecture by Alistair Cockburn http://alistair.cockburn.us/Hexagonal+architecture (2005)
+Domain-Driven Design by Eric Evans http://dddcommunity.org/book/evans_2003/ (2003)
+Martin Fowler https://martinfowler.com/tags/domain%20driven%20design.html (2002)
+reprend l&amp;rsquo;archi hexagonale, tu peux partir du core, ce que tu veux que ta feature fasse tu définis tes ports, ce qu&amp;rsquo;elle va exposer (les méthodes qu&amp;rsquo;elle va devoir implémenter), et ce dont elle va avoir besoin (les méthodes dont ton business va dépendre, pour récupérer des données etc)</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/it/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/it/</guid>
+      <description>donc oui hexa tu veux séparer Appli Domain Infra
+de base, tu dois avoir des modules fonctionnels
+et pour ces modules fonctionnels, oui, ddd
+et dans ton code, hexa
+donc t&amp;rsquo;as un module authent, un module purchase, un module products, un module etc etc etc qui font des séparations fonctionnelles claires
+et dans tes modules
+t&amp;rsquo;as app/domain/infra
+app -&amp;gt; your typical WS endpoint, ton API Rest que t&amp;rsquo;expose
+domain -&amp;gt; ton business, la couche métier, appelé par l&amp;rsquo;app, qui peut appeler le repo et fait des trucs avec ce qu&amp;rsquo;il récupère</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/lead/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/lead/</guid>
+      <description>https://news.ycombinator.com/item?id=31438741 Do you want to be an engineering leader? This is what you are, regardless of your official title at your company. Engineering leaders are judged by how much better they make everyone else. You may hear the term force multiplier used. Say you are really a 10x engineer, how much more effective are you if you could improve the efficiency of 350 developers by 10%? Mentor, teach, help establish culture, make systemic changes to help your peers become more effective.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/learn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/learn/</guid>
+      <description> Learn IT # Links # https://learnxinyminutes.com/ https://refactoring.guru/smells/primitive-obsession https://netflixtechblog.com/ https://www.pluralsight.com/ https://www.hackerrank.com/domains/data-structures https://jvns.ca/ https://danluu.com/ https://engineeringblogs.xyz/ Newsletters # https://blog.bytebytego.com/ Videos # International # https://www.youtube.com/watch?v=8mAITcNt710 https://www.youtube.com/@Computerphile https://www.youtube.com/@GOTO-/videos https://www.youtube.com/@ByteByteGo/videos https://www.youtube.com/@ArjanCodes https://www.youtube.com/@WebDevCody https://www.youtube.com/@aarondfrancis https://www.youtube.com/@ContinuousDelivery French # https://www.youtube.com/@DevoxxFRvideos/videos https://www.youtube.com/@BreizhCamp/videos </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/product_manager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/product_manager/</guid>
+      <description>https://news.ycombinator.com/item?id=22827275
+bah grosso merdo faut faire comprendre aux mecs en face qu&amp;rsquo;on bosse tous ensemble (donc pas les voir comme &amp;ldquo;les mecs en face&amp;rdquo; justement)
+et à partir du moment ou ils sont &amp;ldquo;intégrés&amp;rdquo; au fonctionnement
+bah ils comprennent que changer d&amp;rsquo;avis / les prios etc ça a un impact sur les délais ..
+ils ont tout à fait le droit de changer
+juste ça a un impact et s&amp;rsquo;ils sont intégrés et qu&amp;rsquo;les échanges sont OK ils le comprennent</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/quotes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/quotes/</guid>
+      <description>Quotes # “Remember, when advertising is involved you the user are the product. Your data isn&amp;rsquo;t even in the picture. We are simply not interested in any of it. When people ask us why we charge for WhatsApp, we say ‘Have you considered the alternative?’“
+&amp;ndash; WhatsApp blog post “Why we don&amp;rsquo;t sell ads“, June 2012</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/rgpd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/rgpd/</guid>
+      <description>MOOC de la CNIL sur le RGPD : https://atelier-rgpd.cnil.fr/
+RGPD en pratique : https://www.cnil.fr/fr/rgpd-en-pratique-proteger-les-donnees
+Cloud Act, l&amp;rsquo;offensive américaine pour contrer le RGPD : https://portail-ie.fr/analysis/1902/cloud-act-loffensive-americaine-pour-contrer-le-rgpd
+Comprendre RGPD (video un peu malaisante mais bon) : https://youtu.be/OUMGp3HHel4
+comprendre et appliquer les nouvelles réglementations dans les établissements scolaires : https://www.reseau-canope.fr/fileadmin/user_upload/Projets/RGPD/RGPD_WEB.pdf</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/trunkbased/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/trunkbased/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/vertical_architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/vertical_architecture/</guid>
+      <description>https://mehdihadeli.github.io/awesome-software-architecture/architectural-style/vertical-slice-architecture/#articles
+https://codeopinion.com/restructuring-to-a-vertical-slice-architecture/
+https://headspring.com/2020/08/18/how-vertical-slice-architecture-fulfills-clean-architectures-broken-promises/</description>
+    </item>
+    
+    <item>
+      <title>Organization</title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/organization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/organization/</guid>
+      <description>Preparing your environment (painless context switch) Work in Small steps Mental warm-up before each session. Anticipate and expect interruptions. Changing your physical location. Writting down the ideas on your mind at the end of the session. from : https://hugozap.com/posts/how-to-finish-your-side-project/</description>
+    </item>
+    
+  </channel>
+</rss>

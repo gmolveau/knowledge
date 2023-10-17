@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/management/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/management/leadership/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/management/leadership/</guid>
+      <description>Leadership # &amp;ldquo;leadership is holding a vision long enough for someone else to realize it for themselves.&amp;rdquo;
+https://news.ycombinator.com/item?id=31814284 You can&amp;rsquo;t &amp;ldquo;fake it&amp;rdquo; at this level. One of the most impressive things IMO about this exec was his ability to know, at a fairly low level, what every department and org in the company was doing, and to diagnose their strengths and weaknesses very quickly. We&amp;rsquo;d have quarterly day-long meetings where every department would present, and his ability to quickly hone in on critical low-level details was extremely impressive.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/management/management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/management/management/</guid>
+      <description> Management # Engineering Management # https://www.benkuhn.net/attention/ https://amyunger.com/blog/2020/09/10/staff-engineer-at-heroku.html </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/management/okr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/management/okr/</guid>
+      <description>OKR # Les Objectifs sont une description qualitative ambitieuse de ce que l&amp;rsquo;organisation souhaite atteindre.
+Les Résultats Clés sont une mesure quantitative des progrès vers cet objectif.
+Objectif : où allons-nous, plus précisément, où voulons-nous être dans un certain horizon de temps ? Résultat Clé : comment pensons-nous y parvenir et que signifie atteindre notre objectif ? Les résultats clés basés sur les bénéfices (outcome-based Key Result) sont une mesure du progrès par rapport aux KPIs (exprimé sous la forme : de X à Y) Résultat clé basé sur les projets</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/management/project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/management/project/</guid>
+      <description>Project Management # states # use only TODO / DOING / DONE if another one is needed, make sure it is REALLY needed
+queue # Every team must have a single ordered queue of tasks
+If there is downtime, it’s the top priority of everyone affected If there is an incident, it’s the top priority for an on-call agent My deployed issue waiting for my verification Reviewed pull request waiting for deployment My pull request with completed code review that requested changes Outstanding pull request waiting for code review Customer escalation received through email.</description>
+    </item>
+    
+  </channel>
+</rss>

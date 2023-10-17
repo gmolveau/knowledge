@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/it/architecture/event-driven/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/it/architecture/event-driven/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/architecture/event-driven/event-driven/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/architecture/event-driven/event-driven/</guid>
+      <description> Event Driven Architecture # Resources # https://aws.amazon.com/fr/event-driven-architecture/ https://cleandojo.com/2019/06/event-storming-modelisez-votre-domaine-metier-en-equipe/ https://blog.ippon.fr/2020/02/19/un-event-storming-avec-alberto-brandolini/ https://en.wikipedia.org/wiki/Event_storming https://pablopernot.fr/2019/07/event-storming-description/ https://blog.octo.com/event-driven-est-ce-que-je-suis-pret-compte-rendu-du-talk-de-wassel-alazhar-a-la-duck-conf-2019/ https://medium.com/codeshake/cqrs-events-sourcing-avec-gcp-1-3-introduction-e5a62bbdae28 https://martinfowler.com/eaaDev/EventSourcing.html https://microservices.io/patterns/data/event-sourcing.html </description>
+    </item>
+    
+  </channel>
+</rss>

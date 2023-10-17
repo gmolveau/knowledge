@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/business/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/business/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/business/business/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/business/business/</guid>
+      <description> Business # Resources # https://web.archive.org/web/20210918232402/https://a16z.com/2020/09/07/on-productivity-scheduling-reading-habits-marc-andreessen/ https://davnicwil.com/do-things-that-dont-require-scale/ https://sandro.volpee.de/the-mom-test-summary-validate-ideas </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/business/freelance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/business/freelance/</guid>
+      <description>Freelance # Resources # https://youtu.be/jVkLVRt6c1U - Mike Monteiro - Fuck You, Pay Me</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/it/python/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/it/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/python/exceptions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/python/exceptions/</guid>
+      <description> Python Exceptions # Look Before You Leap (LBYL) and Easier to Ask Forgiveness than Permission (EAFP)
+Try Except Else # the code in the else block is executed only if the code in the try block didn&amp;rsquo;t throw an exception.
+Another use of else is when code in the try block requires some cleanup (and doesn&amp;rsquo;t have a usable context manager)
+Resources # https://jeffknupp.com/blog/2013/02/06/write-cleaner-python-use-exceptions/ https://web.archive.org/web/20220211170740/https://julien.danjou.info/python-exceptions-guide </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/python/learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/python/learning/</guid>
+      <description>from pluralsight
+modules are singleton
+Closures and decorators # closure maintains references to objects from earlier scopes
+def raise_to(exp): def raise_to_exp(x): return pow(x, exp) return raise_to_exp square = raise_to(2) # square is now a function assert square(2) == 4 cube = raise_to(3) assert cube(3) == 9 lambdas are one-line function without a name
+length = lambda name: len(name) assert length(&amp;#34;oui&amp;#34;) == 3 def function(a, b): print(&amp;#34;A function&amp;#34;) def local_function(x, y): print(&amp;#34;A local function&amp;#34;) return x*y + a*b return local_function lambdas // TODO function factories decorators</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/python/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/python/python/</guid>
+      <description>Clean Architecture
+https://breadcrumbscollector.tech/mypy-how-to-use-it-in-my-project/ https://breadcrumbscollector.tech/mypy-how-to-use-it-in-my-project-part-2-automatically-annotate-code/ https://breadcrumbscollector.tech/mypy-how-to-use-it-in-my-project-part-3-kick-ass-tools-that-leverage-type-annotations/ https://github.com/ajgrover/hexagonal-architecture-python https://breadcrumbscollector.tech/the-clean-architecture-in-python-how-to-write-testable-and-flexible-code/ https://www.thedigitalcatonline.com/blog/2016/11/14/clean-architectures-in-python-a-step-by-step-example/ https://www.thedigitalcatonline.com/blog/2016/03/06/python-mocks-a-gentle-introduction-part-1/ https://www.thedigitalcatonline.com/blog/2016/09/27/python-mocks-a-gentle-introduction-part-2/ https://www.kevindangoor.com/posts/hexagonalarchitecture/
+TDD
+https://www.thedigitalcatonline.com/blog/2015/05/13/python-oop-tdd-example-part1/ https://www.thedigitalcatonline.com/blog/2015/09/10/python-oop-tdd-example-part2/
+https://realpython.com/pytest-python-testing/
+Misc
+https://rachelbythebay.com/w/2020/03/07/costly/
+DDD
+https://slides.com/mafinarkhan/ddddd#/ https://dddinpython.com/index.php/2021/11/22/value-objects-in-python/ https://blog.szymonmiks.pl/p/value-objects-with-python/
+Black, flake8, isort and mypy (with several type strengthening flags) have together ensured that Python editing and code reviews are an absolute breeze.
+Multithreading / GIL / Multiprocessing
+https://itecnote.com/tecnote/python-green-threads-and-thread-in-python/ https://stackoverflow.com/questions/12758952/green-threads-and-thread-in-python
+Reading: source code
+https://tourdesource.substack.com/p/how-pydantic-works
+a trier # https://python.plainenglish.io/a-python-project-checklist-91242b4a2ca3 https://github.com/gmolveau/python-project-template https://medium.com/analytics-vidhya/structuring-python-code-best-practices-from-over-10-blogs-2e33cbb83c49 https://python-patterns.guide/</description>
+    </item>
+    
+  </channel>
+</rss>

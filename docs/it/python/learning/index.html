@@ -1,0 +1,3520 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="from pluralsight
+modules are singleton
+Closures and decorators # closure maintains references to objects from earlier scopes
+def raise_to(exp): def raise_to_exp(x): return pow(x, exp) return raise_to_exp square = raise_to(2) # square is now a function assert square(2) == 4 cube = raise_to(3) assert cube(3) == 9 lambdas are one-line function without a name
+length = lambda name: len(name) assert length(&#34;oui&#34;) == 3 def function(a, b): print(&#34;A function&#34;) def local_function(x, y): print(&#34;A local function&#34;) return x*y &#43; a*b return local_function lambdas // TODO function factories decorators">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="from pluralsight
+modules are singleton
+Closures and decorators # closure maintains references to objects from earlier scopes
+def raise_to(exp): def raise_to_exp(x): return pow(x, exp) return raise_to_exp square = raise_to(2) # square is now a function assert square(2) == 4 cube = raise_to(3) assert cube(3) == 9 lambdas are one-line function without a name
+length = lambda name: len(name) assert length(&#34;oui&#34;) == 3 def function(a, b): print(&#34;A function&#34;) def local_function(x, y): print(&#34;A local function&#34;) return x*y &#43; a*b return local_function lambdas // TODO function factories decorators" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gmolveau.github.io/knowledge/docs/it/python/learning/" /><meta property="article:section" content="docs" />
+
+
+<title>Learning | Gregouz Knowledge</title>
+<link rel="manifest" href="/knowledge/manifest.json">
+<link rel="icon" href="/knowledge/favicon.png" >
+<link rel="stylesheet" href="/knowledge/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/knowledge/flexsearch.min.js"></script>
+  <script defer src="/knowledge/en.search.min.ef53c1b49705cae6890acc9e924c61f2a34981f9ae0d078caadc3152afe57d3d.js" integrity="sha256-71PBtJcFyuaJCsyekkxh8qNJgfmuDQeMqtwxUq/lfT0=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/knowledge/"><span>Gregouz Knowledge</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ccc9ecb813974ffce896085bcce576f7" class="toggle"  />
+    <label for="section-ccc9ecb813974ffce896085bcce576f7" class="flex justify-between">
+      <a role="button" class="">Ai</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/ai/ai/" class="">Ai</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0d52339e44a1df6de3022770be2ff4c8" class="toggle"  />
+    <label for="section-0d52339e44a1df6de3022770be2ff4c8" class="flex justify-between">
+      <a role="button" class="">Business</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/business/business/" class="">Business</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/business/freelance/" class="">Freelance</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-abc1e2a3a32f0b9ed5572cdd53dd4e7d" class="toggle"  />
+    <label for="section-abc1e2a3a32f0b9ed5572cdd53dd4e7d" class="flex justify-between">
+      <a role="button" class="">Connaissance</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/connaissance/connaissance/" class="">Connaissance</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dae2cc4051949457826970813419835e" class="toggle"  />
+    <label for="section-dae2cc4051949457826970813419835e" class="flex justify-between">
+      <a role="button" class="">Courses</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/courses/courses/" class="">Courses</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c696d5b0dd31357320b5ee0711a679dc" class="toggle"  />
+    <label for="section-c696d5b0dd31357320b5ee0711a679dc" class="flex justify-between">
+      <a role="button" class="">Cuisine</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/cuisine/recettes/" class="">Recettes</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/developpement_personnel/" class="">Developpement Personnel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5133c0ecabddb55a68b6dd6e00e7703f" class="toggle"  />
+    <label for="section-5133c0ecabddb55a68b6dd6e00e7703f" class="flex justify-between">
+      <a role="button" class="">Games</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/games/wow/" class="">Wow</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ce2f1594fa3d18bb5604540e4de080b5" class="toggle"  />
+    <label for="section-ce2f1594fa3d18bb5604540e4de080b5" class="flex justify-between">
+      <a role="button" class="">Life</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b11485a64bdf63bb5de4777e2a811507" class="toggle"  />
+    <label for="section-b11485a64bdf63bb5de4777e2a811507" class="flex justify-between">
+      <a role="button" class="">Happiness</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/life/happiness/happiness/" class="">Happiness</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-99a2df89b4a43b7c365b8bd3bfd8077a" class="toggle"  />
+    <label for="section-99a2df89b4a43b7c365b8bd3bfd8077a" class="flex justify-between">
+      <a role="button" class="">Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/life/learning/learning/" class="">Learning</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/life/life/" class="">Life</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0b8c03a7e18f83deddb77f3e6b37ba58" class="toggle"  />
+    <label for="section-0b8c03a7e18f83deddb77f3e6b37ba58" class="flex justify-between">
+      <a role="button" class="">Money</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/life/money/money/" class="">Money</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-685df70a62eecd8c6560f84edda250f6" class="toggle"  />
+    <label for="section-685df70a62eecd8c6560f84edda250f6" class="flex justify-between">
+      <a role="button" class="">Parenting</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/life/parenting/parenting/" class="">Parenting</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7d7927856b05e58a348b4a096be63791" class="toggle"  />
+    <label for="section-7d7927856b05e58a348b4a096be63791" class="flex justify-between">
+      <a role="button" class="">Management</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/management/leadership/" class="">Leadership</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/management/management/" class="">Management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/management/okr/" class="">OK R</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/management/project/" class="">Project</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/meeting/" class="">Meeting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cef909b8fc231846528602e66e8c7ed5" class="toggle"  />
+    <label for="section-cef909b8fc231846528602e66e8c7ed5" class="flex justify-between">
+      <a role="button" class="">Philosophy</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb93c515b098beaac5c213caa75b11b7" class="toggle"  />
+    <label for="section-fb93c515b098beaac5c213caa75b11b7" class="flex justify-between">
+      <a role="button" class="">Camus</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/philosophy/camus/camus/" class="">Camus</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/philosophy/philosophy/" class="">Philosophy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-76867007d5dcb6116d07f08da809c188" class="toggle"  />
+    <label for="section-76867007d5dcb6116d07f08da809c188" class="flex justify-between">
+      <a role="button" class="">Productivity</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/productivity/productivity/" class="">Productivity</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b6f30c450d5f7ecc0b183f0fd3fda8bd" class="toggle"  />
+    <label for="section-b6f30c450d5f7ecc0b183f0fd3fda8bd" class="flex justify-between">
+      <a role="button" class="">Questions</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/questions/questions/" class="">Questions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8b53e6b3af3f80647b833e98f5bc2705" class="toggle"  />
+    <label for="section-8b53e6b3af3f80647b833e98f5bc2705" class="flex justify-between">
+      <a role="button" class="">Quotes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/quotes/quotes/" class="">Quotes</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-854f5663781017d60b4428b8e06f7935" class="toggle"  />
+    <label for="section-854f5663781017d60b4428b8e06f7935" class="flex justify-between">
+      <a role="button" class="">Rhetorique</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/rhetorique/rhetorique/" class="">Rhetorique</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9e5ecdc4aa099f70dc0edd86de0072a2" class="toggle"  />
+    <label for="section-9e5ecdc4aa099f70dc0edd86de0072a2" class="flex justify-between">
+      <a role="button" class="">Society</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/society/disruption/" class="">Disruption</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-631d68b1a3a2a1869334e5ba8a97f308" class="toggle" checked />
+    <label for="section-631d68b1a3a2a1869334e5ba8a97f308" class="flex justify-between">
+      <a role="button" class="">IT</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/agile/" class="">Agile</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/analytics/" class="">Analytics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6f37f34018a93c2b7294b287b1165928" class="toggle"  />
+    <label for="section-6f37f34018a93c2b7294b287b1165928" class="flex justify-between">
+      <a role="button" class="">API</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/api/api/" class="">API</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b1e3254117f6e8b08605081352d573d9" class="toggle"  />
+    <label for="section-b1e3254117f6e8b08605081352d573d9" class="flex justify-between">
+      <a role="button" class="">Architecture</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/architecture/architecture/" class="">Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8915ba022eeef98c10b2a68edc0ad8a6" class="toggle"  />
+    <label for="section-8915ba022eeef98c10b2a68edc0ad8a6" class="flex justify-between">
+      <a role="button" class="">Event Driven</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/architecture/event-driven/event-driven/" class="">Event Driven</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03f767fb4f0f6e6aafbcf3c61176e5e6" class="toggle"  />
+    <label for="section-03f767fb4f0f6e6aafbcf3c61176e5e6" class="flex justify-between">
+      <a role="button" class="">Bdd</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/bdd/bdd/" class="">Bdd</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-20c3eccdcc110b8ed2dfae75f35b94ef" class="toggle"  />
+    <label for="section-20c3eccdcc110b8ed2dfae75f35b94ef" class="flex justify-between">
+      <a role="button" class="">Cache</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/cache/cache/" class="">Cache</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5c51b8ed75e5bf10ba31aaeb78529c5c" class="toggle"  />
+    <label for="section-5c51b8ed75e5bf10ba31aaeb78529c5c" class="flex justify-between">
+      <a role="button" class="">Ci</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/ci/ci/" class="">Ci</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-27b037cdde53eefaecb24cd4d74c5337" class="toggle"  />
+    <label for="section-27b037cdde53eefaecb24cd4d74c5337" class="flex justify-between">
+      <a role="button" class="">Cloud</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7287816897d7e755be2ecf6bfc69f76c" class="toggle"  />
+    <label for="section-7287816897d7e755be2ecf6bfc69f76c" class="flex justify-between">
+      <a role="button" class="">Gitops</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/cloud/gitops/gitops/" class="">Gitops</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-695e9cca7452f0d6eede90c3d1784b74" class="toggle"  />
+    <label for="section-695e9cca7452f0d6eede90c3d1784b74" class="flex justify-between">
+      <a role="button" class="">Code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7fe0102113749b2db50c339536c502ef" class="toggle"  />
+    <label for="section-7fe0102113749b2db50c339536c502ef" class="flex justify-between">
+      <a role="button" class="">Clean Code</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/code/clean_code/clean_code/" class="">Clean Code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-081754a464f518deb23c721a03e0f1b5" class="toggle"  />
+    <label for="section-081754a464f518deb23c721a03e0f1b5" class="flex justify-between">
+      <a role="button" class="">Refactoring</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/code/refactoring/refactoring/" class="">Refactoring</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9da93c787431d5e6bd405cc1036e19c0" class="toggle"  />
+    <label for="section-9da93c787431d5e6bd405cc1036e19c0" class="flex justify-between">
+      <a role="button" class="">Solid</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/code/solid/solid/" class="">Solid</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/containers/" class="">Containers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/courses/" class="">Courses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-99bfe6f20d563e6389ea689ad346f8be" class="toggle"  />
+    <label for="section-99bfe6f20d563e6389ea689ad346f8be" class="flex justify-between">
+      <a role="button" class="">Cpp</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/cpp/cpp/" class="">Cpp</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/css/" class="">Css</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cde56ebee4e473772f2b2e092442b582" class="toggle"  />
+    <label for="section-cde56ebee4e473772f2b2e092442b582" class="flex justify-between">
+      <a role="button" class="">Css</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/css/css/" class="">Css</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/cto/" class="">Cto</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dca6548755b9da71bf2936b4064ca328" class="toggle"  />
+    <label for="section-dca6548755b9da71bf2936b4064ca328" class="flex justify-between">
+      <a role="button" class="">Database</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/database/database/" class="">Database</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3e739eaeb027a521bcec6cb107144412" class="toggle"  />
+    <label for="section-3e739eaeb027a521bcec6cb107144412" class="flex justify-between">
+      <a role="button" class="">Ddd</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/ddd/ddd/" class="">Ddd</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/django/" class="">Django</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5a5ccf90486c865412ee2ac9c2186ab7" class="toggle"  />
+    <label for="section-5a5ccf90486c865412ee2ac9c2186ab7" class="flex justify-between">
+      <a role="button" class="">Docker</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/docker/docker/" class="">Docker</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f95e18d6e7739be3c43bbb826cfa56dc" class="toggle"  />
+    <label for="section-f95e18d6e7739be3c43bbb826cfa56dc" class="flex justify-between">
+      <a role="button" class="">Engineering</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/engineering/engineering/" class="">Engineering</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/flask/" class="">Flask</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/frontend/" class="">Frontend</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e84e93cbe54dfafa80bef9b3564329fe" class="toggle"  />
+    <label for="section-e84e93cbe54dfafa80bef9b3564329fe" class="flex justify-between">
+      <a role="button" class="">Git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/git/git/" class="">Git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-74134767def40bf760d454678de48ad8" class="toggle"  />
+    <label for="section-74134767def40bf760d454678de48ad8" class="flex justify-between">
+      <a role="button" class="">Go</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/go/go/" class="">Go</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/grpc/" class="">Grpc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/hexagonal/" class="">Hexagonal</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-22bc0b0e30bbe4c7e2dfa454f478e32f" class="toggle"  />
+    <label for="section-22bc0b0e30bbe4c7e2dfa454f478e32f" class="flex justify-between">
+      <a role="button" class="">Hexagonal</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bd426f805ff786c8cb38506e077478e2" class="toggle"  />
+    <label for="section-bd426f805ff786c8cb38506e077478e2" class="flex justify-between">
+      <a role="button" class="">Homeserver</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/homeserver/homeserver/" class="">Homeserver</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/it/" class="">It</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5e91f3ab68090214aaafa58f8ad9e30c" class="toggle"  />
+    <label for="section-5e91f3ab68090214aaafa58f8ad9e30c" class="flex justify-between">
+      <a role="button" class="">Jq</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/jq/jq/" class="">Jq</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b383cefd9d2ca2d0a9fe6abf18c313af" class="toggle"  />
+    <label for="section-b383cefd9d2ca2d0a9fe6abf18c313af" class="flex justify-between">
+      <a role="button" class="">K8s</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/k8s/k8s/" class="">K8s</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/lead/" class="">Lead</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/learn/" class="">Learn</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-24a989fd58a25cc5d6f303926a325c2c" class="toggle"  />
+    <label for="section-24a989fd58a25cc5d6f303926a325c2c" class="flex justify-between">
+      <a role="button" class="">Logging</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/logging/logging/" class="">Logging</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f546e1a555f6805bfa671d6f2be9993c" class="toggle"  />
+    <label for="section-f546e1a555f6805bfa671d6f2be9993c" class="flex justify-between">
+      <a role="button" class="">Macos</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/macos/macos/" class="">Macos</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c0052804d162d4b0ba979f28c03a0916" class="toggle"  />
+    <label for="section-c0052804d162d4b0ba979f28c03a0916" class="flex justify-between">
+      <a role="button" class="">Makefile</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/makefile/makefile/" class="">Makefile</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-557049e749086186bdc2bb05bb9afd7b" class="toggle"  />
+    <label for="section-557049e749086186bdc2bb05bb9afd7b" class="flex justify-between">
+      <a role="button" class="">Markdown</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/markdown/markdown/" class="">Markdown</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9d252a67c83b6fcf94854b40b5fa9ab8" class="toggle"  />
+    <label for="section-9d252a67c83b6fcf94854b40b5fa9ab8" class="flex justify-between">
+      <a role="button" class="">Microservices</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/microservices/microservices/" class="">Microservices</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-456d26a543a01892e614528a3a0bd1ab" class="toggle"  />
+    <label for="section-456d26a543a01892e614528a3a0bd1ab" class="flex justify-between">
+      <a role="button" class="">Nocode</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/nocode/nocode/" class="">Nocode</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/product_manager/" class="">Product Manager</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-507353bd23e788a9b89442a53db5911f" class="toggle" checked />
+    <label for="section-507353bd23e788a9b89442a53db5911f" class="flex justify-between">
+      <a role="button" class="">Python</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-97a34cde10457eb5d68d0a7fd5b9ee55" class="toggle"  />
+    <label for="section-97a34cde10457eb5d68d0a7fd5b9ee55" class="flex justify-between">
+      <a role="button" class="">Design Patterns</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/python/design_patterns/design_patterns/" class="">Design Patterns</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/python/exceptions/" class="">Exceptions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9cc53cd77dc9d5c1180a57cf832f3795" class="toggle"  />
+    <label for="section-9cc53cd77dc9d5c1180a57cf832f3795" class="flex justify-between">
+      <a role="button" class="">Flask</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/python/flask/flask_hexagonal/" class="">Flask Hexagonal</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/python/learning/" class="active">Learning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/python/python/" class="">Python</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-38044a47333083e63b6c04a5937288f3" class="toggle"  />
+    <label for="section-38044a47333083e63b6c04a5937288f3" class="flex justify-between">
+      <a role="button" class="">Tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/python/tests/tests/" class="">Tests</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/quotes/" class="">Quotes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/rgpd/" class="">Rgpd</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cb12a76897789abd4d5e3583aed3ec10" class="toggle"  />
+    <label for="section-cb12a76897789abd4d5e3583aed3ec10" class="flex justify-between">
+      <a role="button" class="">Rust</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/rust/rust/" class="">Rust</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ef2c3d0cc8f6b34792447855c9e6ee68" class="toggle"  />
+    <label for="section-ef2c3d0cc8f6b34792447855c9e6ee68" class="flex justify-between">
+      <a role="button" class="">Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-97d96ccdc43fe043241c9632e11e4cb4" class="toggle"  />
+    <label for="section-97d96ccdc43fe043241c9632e11e4cb4" class="flex justify-between">
+      <a role="button" class="">Cors</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/security/cors/cors/" class="">Cors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9881db94e60a730c778309c3ad360867" class="toggle"  />
+    <label for="section-9881db94e60a730c778309c3ad360867" class="flex justify-between">
+      <a role="button" class="">Messaging</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/security/messaging/messaging/" class="">Messaging</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d9ae53c7b6243b4cc17b99bebc8abf9d" class="toggle"  />
+    <label for="section-d9ae53c7b6243b4cc17b99bebc8abf9d" class="flex justify-between">
+      <a role="button" class="">Tests</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e901e4724cf390861d3271f45ee1d634" class="toggle"  />
+    <label for="section-e901e4724cf390861d3271f45ee1d634" class="flex justify-between">
+      <a role="button" class="">Tdd</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/tests/tdd/tdd/" class="">Tdd</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/tests/tests/" class="">Tests</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/vertical_architecture/" class="">Vertical Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c6297277dc457f3a0e9102953b91f3f" class="toggle"  />
+    <label for="section-0c6297277dc457f3a0e9102953b91f3f" class="flex justify-between">
+      <a role="button" class="">Websocket</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/websocket/websocket/" class="">Websocket</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/knowledge/docs/it/organization/" class="">Organization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/knowledge/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Learning</strong>
+
+  <label for="toc-control">
+    
+    <img src="/knowledge/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#repr---__repr__">repr() &gt;  <strong>repr</strong></a></li>
+    <li><a href="#str---__str__">str()  &gt; <strong>str</strong></a></li>
+    <li><a href="#parameterformat--__format__self-f">&ldquo;{:parameter}&quot;.format &gt; <strong>format</strong>(self, f)</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#decimal-type">Decimal type</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#types">Types</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#tox">Tox</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#unittest-module">Unittest module</a></li>
+    <li><a href="#pytest-module">Pytest module</a></li>
+    <li><a href="#testable-documentation-with-doctest">Testable Documentation with doctest</a></li>
+    <li><a href="#test-doubles--mocks-stubs-and-fakes">Test Doubles : Mocks, Stubs and Fakes</a>
+      <ul>
+        <li><a href="#stub">Stub</a></li>
+        <li><a href="#fake">Fake</a></li>
+        <li><a href="#dummy">Dummy</a></li>
+        <li><a href="#spy">Spy</a></li>
+        <li><a href="#mock">Mock</a></li>
+      </ul>
+    </li>
+    <li><a href="#monkey-patching">Monkey Patching</a></li>
+    <li><a href="#parameterized-tests-and-test-coverage">Parameterized tests and test coverage</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#while-else">While else</a></li>
+    <li><a href="#for-else">For else</a></li>
+    <li><a href="#try-else">Try else</a></li>
+    <li><a href="#dispath-on-type">Dispath on Type</a></li>
+    <li><a href="#byte-oriented-programming">Byte oriented programming</a>
+      <ul>
+        <li><a href="#interpreting-binary-structures">Interpreting binary structures</a></li>
+      </ul>
+    </li>
+    <li><a href="#memory-efficiency">Memory efficiency</a></li>
+    <li><a href="#descriptors">Descriptors</a></li>
+    <li><a href="#instance-creatioon">Instance creatioon</a></li>
+    <li><a href="#metaclasses">Metaclasses</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote>
+<p>from pluralsight</p>
+</blockquote>
+<p>modules are singleton</p>
+<h1 id="closures-and-decorators">
+  Closures and decorators
+  <a class="anchor" href="#closures-and-decorators">#</a>
+</h1>
+<p>closure maintains references to objects from earlier scopes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">raise_to</span>(exp):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">raise_to_exp</span>(x):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> pow(x, exp)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> raise_to_exp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>square <span style="color:#f92672">=</span> raise_to(<span style="color:#ae81ff">2</span>) <span style="color:#75715e"># square is now a function</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> square(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>cube <span style="color:#f92672">=</span> raise_to(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> cube(<span style="color:#ae81ff">3</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">9</span>
+</span></span></code></pre></div><p>lambdas are one-line function without a name</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>length <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> name: len(name)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> length(<span style="color:#e6db74">&#34;oui&#34;</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">function</span>(a, b):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;A function&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">local_function</span>(x, y):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;A local function&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>y <span style="color:#f92672">+</span> a<span style="color:#f92672">*</span>b
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> local_function
+</span></span></code></pre></div><p>lambdas // TODO
+function factories
+decorators</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logging_decorator</span>(f):
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@functools.wraps</span>(f) <span style="color:#75715e">#forwards __doc__ and __name__</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logging_wrapper</span>():
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>f<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74"> function was called&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> f
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> logging_wrapper
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#@second_decorator - decorators are called in reverse-order</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@logging_decorator</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;print hello&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Hello&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hello()
+</span></span></code></pre></div><p>wrappers</p>
+<h1 id="properties-and-class-methods">
+  properties and class methods
+  <a class="anchor" href="#properties-and-class-methods">#</a>
+</h1>
+<p>class_attribute
+instance_attribute</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    a_class_attribute <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>an_instance_attribute <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>        Foo<span style="color:#f92672">.</span>a_class_attribute <span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>a_class_attribute <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;actually doesnt change the class attribute&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@staticmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">a_static_method</span>():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;No self, can&#39;t use the class attributes&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@classmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">a_class_method</span>(cls):
+</span></span><span style="display:flex;"><span>        cls<span style="color:#f92672">.</span>a_class_attribute <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@classmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">a_named_constructor</span>(cls):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> cls()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_get_a_property</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>an_instance_attribute
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">a_property</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_get_a_property()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_set_a_property</span>(self, value):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>an_instance_attribute <span style="color:#f92672">=</span> value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@a_property.setter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">a_property</span>(self, value):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_set_a_property(value)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bar</span>(Foo):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># template method design pattern - override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_get_a_property</span>(self):
+</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> super()<span style="color:#f92672">.</span>_get_a_property()
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># do more things with it</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> r
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_set_a_property</span>(self, value):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># added logic, like checks</span>
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>_set_a_property(value)
+</span></span></code></pre></div><h1 id="strings-and-representations">
+  Strings and representations
+  <a class="anchor" href="#strings-and-representations">#</a>
+</h1>
+<h2 id="repr---__repr__">
+  repr() &gt;  <strong>repr</strong>
+  <a class="anchor" href="#repr---__repr__">#</a>
+</h2>
+<p>unambiguous, precise, include type, for developers and debugging
+where information is more important than readabiility</p>
+<ul>
+<li>reprlib</li>
+</ul>
+<h2 id="str---__str__">
+  str()  &gt; <strong>str</strong>
+  <a class="anchor" href="#str---__str__">#</a>
+</h2>
+<p>for humans,
+if not set, uses <strong>repr</strong></p>
+<h2 id="parameterformat--__format__self-f">
+  &ldquo;{:parameter}&quot;.format &gt; <strong>format</strong>(self, f)
+  <a class="anchor" href="#parameterformat--__format__self-f">#</a>
+</h2>
+<h1 id="numeric-and-scalar-types">
+  Numeric and scalar types
+  <a class="anchor" href="#numeric-and-scalar-types">#</a>
+</h1>
+<h2 id="decimal-type">
+  Decimal type
+  <a class="anchor" href="#decimal-type">#</a>
+</h2>
+<p>from datetime import datetime as Datetime // useful</p>
+<h1 id="iterables-and-iteration">
+  Iterables and Iteration
+  <a class="anchor" href="#iterables-and-iteration">#</a>
+</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>l <span style="color:#f92672">=</span> [(x,y) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>) <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range (<span style="color:#ae81ff">3</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># l = [(x,y) </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    for x in range(5) </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    if x &lt; 10 </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    for y in range (3)]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># is equivalent to</span>
+</span></span><span style="display:flex;"><span>ll <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range (<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>            ll<span style="color:#f92672">.</span>append((x,y))
+</span></span></code></pre></div><p>map(ord, &ldquo;oui la voix&rdquo;) returns a lazily-evaluated iterator
+filter : filter via a boolean function
+reduce : accumulation</p>
+<p>iterator : <strong>next</strong>(), <strong>iter</strong>(), <strong>getitem</strong>()
+sequence : <strong>len</strong>(), <strong>getitem</strong>()
+all sequences are iterable</p>
+<h1 id="inheritance-and-subtype-polymorphism">
+  Inheritance and Subtype Polymorphism
+  <a class="anchor" href="#inheritance-and-subtype-polymorphism">#</a>
+</h1>
+<p>python sub-class does not call base class initializer automatically - must use super()</p>
+<h1 id="collections">
+  Collections
+  <a class="anchor" href="#collections">#</a>
+</h1>
+<p>container = in and not-in
+sized = len
+iterable = iter + &ldquo;for in&rdquo;
+sequence = count, access by index, reversable, slicable, concatenation and repetition
+set</p>
+<ul>
+<li><a href="https://docs.python.org/3/library/collections.abc.html">https://docs.python.org/3/library/collections.abc.html</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SortedSet</span>(Sequence, Set):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, items<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_items <span style="color:#f92672">=</span> sorted(set(items)) <span style="color:#66d9ef">if</span> items <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span> <span style="color:#66d9ef">else</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __contains__(self, item): <span style="color:#75715e">#container</span>
+</span></span><span style="display:flex;"><span>        index <span style="color:#f92672">=</span> bisect_left(self<span style="color:#f92672">.</span>_items, item)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (index <span style="color:#f92672">!=</span> len(self<span style="color:#f92672">.</span>_items)) <span style="color:#f92672">and</span> (self<span style="color:#f92672">.</span>_items[index] <span style="color:#f92672">==</span> item)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __len__(self): <span style="color:#75715e">#sized</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> len(self<span style="color:#f92672">.</span>_items)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __iter__(self): <span style="color:#75715e">#iterable</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> iter(self<span style="color:#f92672">.</span>_items)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __getitem__(self, index):
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_items[index]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> SortedSet(result) <span style="color:#66d9ef">if</span> isinstance(index, slice) <span style="color:#66d9ef">else</span> result
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Sorted(</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">)&#34;</span><span style="color:#f92672">.</span>format(
+</span></span><span style="display:flex;"><span>            repr(self<span style="color:#f92672">.</span>_items) <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>_items <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __eq__(self, rhs):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> isinstance(rhs, SortedSet):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> NotImplemented <span style="color:#75715e">#different than raise NotImplementedError</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_items <span style="color:#f92672">==</span> rhs<span style="color:#f92672">.</span>_items
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __ne__(self, rhs):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> isinstance(rhs, SortedSet):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> NotImplemented <span style="color:#75715e">#different than raise NotImplementedError</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_items <span style="color:#f92672">!=</span> rhs<span style="color:#f92672">.</span>_items
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>(self, item):
+</span></span><span style="display:flex;"><span>        index <span style="color:#f92672">=</span> bisect_left(self<span style="color:#f92672">.</span>_items, item)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (index <span style="color:#f92672">!=</span> len(self<span style="color:#f92672">.</span>_items)) <span style="color:#f92672">and</span> (self<span style="color:#f92672">.</span>_items[index] <span style="color:#f92672">==</span> item):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> index
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> not found&#34;</span><span style="color:#f92672">.</span>format(repr(item)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_is_unique_and_sorted</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> all(self[i] <span style="color:#f92672">&lt;</span> self[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(self) <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">count</span>(self, item):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> self<span style="color:#f92672">.</span>_is_unique_and_sorted()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> int(item <span style="color:#f92672">in</span> self)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __add__(self, rhs):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> SortedSet(itertools<span style="color:#f92672">.</span>chain(self<span style="color:#f92672">.</span>_items, rhs<span style="color:#f92672">.</span>_items))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __mul__(self, rhs):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self <span style="color:#66d9ef">if</span> rhs <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">else</span> SortedSet()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __rmul__(self, lhs):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self <span style="color:#f92672">*</span> lhs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">issubset</span>(self, iterable):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self <span style="color:#f92672">&lt;=</span> SortedSet(iterable)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">issuperset</span>(self, iterable):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self <span style="color:#f92672">&gt;=</span> SortedSet(iterable)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">intersection</span>(self, iterable):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self <span style="color:#f92672">&amp;</span> SortedSet(iterable)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">union</span>(self, iterable):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self <span style="color:#f92672">|</span> SortedSet(iterable)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">symmetric_difference</span>(self, iterable):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self <span style="color:#f92672">^</span> SortedSet(iterable)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">difference</span>(self, iterable):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self <span style="color:#f92672">-</span> SortedSet(iterable)
+</span></span></code></pre></div><h1 id="exceptions-and-errors">
+  Exceptions and errors
+  <a class="anchor" href="#exceptions-and-errors">#</a>
+</h1>
+<p>never catch ALL exceptions</p>
+<p><a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy">https://docs.python.org/3/library/exceptions.html#exception-hierarchy</a></p>
+<p><strong>context</strong>
+<strong>cause</strong>
+<strong>traceback</strong></p>
+<h1 id="defining-context-managers">
+  Defining context managers
+  <a class="anchor" href="#defining-context-managers">#</a>
+</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 1st solution</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ContextManager</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># PEP 343</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __enter__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># can return a ContextManager which will be used in `with ... as`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># usually return itself with set variables</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __exit__(self, exception_type, exception_val, exception_tb):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># propagate Exception by default, return False to not propagate</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># must not re-raise Exception except if fails itself</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> exception_type <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2nd solution</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># useful for a stateful context manager</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@contextlib.contextmanager</span> <span style="color:#75715e"># for a function that yield something</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_context_manager</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># &lt;ENTER&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">yield</span> [value] <span style="color:#75715e">#will be bound to `with ... as`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># &lt;NORMAL EXIT&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># &lt;EXCEPTIONAL EXIT&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># need to explicitly re-raise the exception</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> context_manager <span style="color:#66d9ef">as</span> x:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># context_manager.begin()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># context_manager.end() </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> cm <span style="color:#66d9ef">as</span> a, cm <span style="color:#66d9ef">as</span> b :
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> cm() <span style="color:#66d9ef">as</span> a,\
+</span></span><span style="display:flex;"><span>     cm(a) <span style="color:#66d9ef">as</span> b:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span></code></pre></div><h1 id="introspection">
+  Introspection
+  <a class="anchor" href="#introspection">#</a>
+</h1>
+<p><em>Easier to Ask Forgiveness Than Permission</em>
+vs <em>Look Before You Leap</em></p>
+<p>It is more pythonic to assume that a certain type is passed as an argument
+rather than checking that the passed argument has all the necessary attributes
+assume that this certain type is passed
+and with a <code>try ... except</code> block, raise a TypeError if necessary
+(becausse hasattr uses <code>try - except</code> anyway)</p>
+<h1 id="best-practices-for-code-quality">
+  Best practices for code quality
+  <a class="anchor" href="#best-practices-for-code-quality">#</a>
+</h1>
+<p>PEP8 official python style guidelines</p>
+<p>Formatting
+Whitespace
+Naming</p>
+<p>pylint
+pycodestyle
+black</p>
+<p>Sphinx with reStructuredText + apidoc (for code)</p>
+<h2 id="types">
+  Types
+  <a class="anchor" href="#types">#</a>
+</h2>
+<p>mypy or PyCharm
+change pycharm settings to treat type-warnings as errors</p>
+<p><a href="https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html">https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plus</span>(num1: int, my_float: float <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.5</span>) <span style="color:#f92672">-&gt;</span> float:
+</span></span><span style="display:flex;"><span>    result: float
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> num1 <span style="color:#f92672">+</span> my_float
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> result
+</span></span></code></pre></div><h1 id="virtualenv">
+  Virtualenv
+  <a class="anchor" href="#virtualenv">#</a>
+</h1>
+<p>always use <code>python3 -m pip [...]</code></p>
+<p>always use a venv</p>
+<p>use <code>python3 -m venv [...]</code></p>
+<h2 id="tox">
+  Tox
+  <a class="anchor" href="#tox">#</a>
+</h2>
+<p>let&rsquo;s you test your code against different versions of python with venvs
+<code>tox.ini</code></p>
+<p>poetry</p>
+<h1 id="unit-testing">
+  Unit Testing
+  <a class="anchor" href="#unit-testing">#</a>
+</h1>
+<p>automated unit test</p>
+<ul>
+<li>designed by a human</li>
+<li>runs without intervention</li>
+<li>reports if fail or pass</li>
+</ul>
+<p>all tests are independant</p>
+<p>first Arrange : set up objects
+then Act : launch the unit test
+then Assert : make claims about what happened</p>
+<p>check for regression testing</p>
+<p>Test Driven Development (better than Test First and Test Last)</p>
+<ul>
+<li>pluralsight course about TDD by the same author
+<a href="https://martinfowler.com/articles/continuousIntegration.html">https://martinfowler.com/articles/continuousIntegration.html</a></li>
+</ul>
+<h2 id="unittest-module">
+  Unittest module
+  <a class="anchor" href="#unittest-module">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># test_xxxx.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> unittest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PhoneBookTest</span>(unittest<span style="color:#f92672">.</span>TestCase):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setUp</span>(self) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>: <span style="color:#75715e"># fixture</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>att <span style="color:#f92672">=</span> NewAtt()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tearDown</span>(self) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_scenario</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>att<span style="color:#f92672">.</span>something()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertEqual(<span style="color:#e6db74">&#34;xxx&#34;</span>, x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@unittest.skip</span>(<span style="color:#e6db74">&#34;WIP&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_wip</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>att<span style="color:#f92672">.</span>something()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
+</span></span></code></pre></div><h2 id="pytest-module">
+  Pytest module
+  <a class="anchor" href="#pytest-module">#</a>
+</h2>
+<p>report as HTML with <code>pytest-html</code>
+run with <code>python3 -m pytest --html=report.html</code></p>
+<p><code>PYTHONPATH=. python3 -m pytest tests/</code></p>
+<pre tabindex="0"><code># pytest.ini
+[pytest]
+addopts = --strict
+markers = 
+    slow: Run tests that are slow because 
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># tests/conftest.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.fixture</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">obj</span>(tmpdir):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># setup</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> obj
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># teardown</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#  shutil.rmtree(str(tmpdir))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># tests/1.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_scenario</span>(obj):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> <span style="color:#e6db74">&#34;xxx&#34;</span> <span style="color:#f92672">==</span> x
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> pytest<span style="color:#f92672">.</span>raises(<span style="color:#a6e22e">KeyError</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.mark.slow</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_slow</span>(obj):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.mark.skip</span>(<span style="color:#e6db74">&#34;WIP&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_skipped</span>(obj):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span></code></pre></div><h2 id="testable-documentation-with-doctest">
+  Testable Documentation with doctest
+  <a class="anchor" href="#testable-documentation-with-doctest">#</a>
+</h2>
+<ul>
+<li>docstring maintenance : keep docstring synchronised with code</li>
+<li>regression testing (approval testing)</li>
+<li>tutorial documentation</li>
+</ul>
+<p><code>python3 -m pytest --doctest-modules</code></p>
+<pre tabindex="0"><code># pytest.ini
+[pytest]
+addopts = --strict
+markers = 
+    slow: Run tests that are slow because
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_func</span>(a, b):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Do something
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; result = my_func(&#34;test&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    ... &#34;other&#34;) # doctest: +ELLIPSIS
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; (print r for r in result)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    xxx ... yyy
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">random_choice</span>(obj):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Randomly choose something
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; random.seed(1234) # deterministic choice
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; random_choice(&#34;test&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;xxx&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">traceback</span>(obj):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Will fail 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; traceback(123)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Traceback (most recent call last):
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    ...
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    TypeError: must be str, not int
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h2 id="test-doubles--mocks-stubs-and-fakes">
+  Test Doubles : Mocks, Stubs and Fakes
+  <a class="anchor" href="#test-doubles--mocks-stubs-and-fakes">#</a>
+</h2>
+<p>3 kinds of Assert : return value - state change - method call</p>
+<p>Dummy -&gt; Stub -&gt; Fake</p>
+<h3 id="stub">
+  Stub
+  <a class="anchor" href="#stub">#</a>
+</h3>
+<p>a Stub has the same methods as the class it replaces,
+but the implementation is very simple.
+s Stub won&rsquo;t fail the test.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sensor <span style="color:#f92672">import</span> sensor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># hand-coded stub</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StubSensor</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sample_pressure</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Alarm</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># NEW : a stub sensor can be provided</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, sensor<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_sensor <span style="color:#f92672">=</span> sensor <span style="color:#f92672">or</span> Sensor()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_low_pressure_threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_high_pressure_threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_is_alarm_on <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># OLD : can&#39;t specify a stub sensor as it is instanciated directly</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_sensor <span style="color:#f92672">=</span> Sensor()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_low_pressure_threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_high_pressure_threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_is_alarm_on <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_low_pressure_activates_alarm</span>():
+</span></span><span style="display:flex;"><span>    alarm <span style="color:#f92672">=</span> Alarm(sensor<span style="color:#f92672">=</span>StubSensor())
+</span></span><span style="display:flex;"><span>    alarm<span style="color:#f92672">.</span>check()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> alarm<span style="color:#f92672">.</span>is_alarm_on
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_normal_pressure_alarm_stays_off</span>():
+</span></span><span style="display:flex;"><span>    stub_sensor <span style="color:#f92672">=</span> unittest<span style="color:#f92672">.</span>mock<span style="color:#f92672">.</span>Mock(Sensor)
+</span></span><span style="display:flex;"><span>    stub_sensor<span style="color:#f92672">.</span>sample_pressure<span style="color:#f92672">.</span>return_value <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span>    alarm <span style="color:#f92672">=</span> Alarm(sensor<span style="color:#f92672">=</span>stub_sensor)
+</span></span><span style="display:flex;"><span>    alarm<span style="color:#f92672">.</span>check()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> <span style="color:#f92672">not</span> alarm<span style="color:#f92672">.</span>is_alarm_on
+</span></span></code></pre></div><h3 id="fake">
+  Fake
+  <a class="anchor" href="#fake">#</a>
+</h3>
+<p>a Fake has the same methods as the class it replaces,
+with a real implementation with logic and behaviour</p>
+<ul>
+<li>replace File with StringIO</li>
+<li>replace MySQL with a in-memory-database</li>
+<li>replace real webserver with a lightweight-webserver</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_convert_quotes</span>():
+</span></span><span style="display:flex;"><span>    fake_file <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>StringIO(<span style="color:#e6db74">&#34;quote: &#39; &#34;</span>)
+</span></span><span style="display:flex;"><span>    converter <span style="color:#f92672">=</span> HtmlPagesConverter(open_file<span style="color:#f92672">=</span>fake_file)
+</span></span><span style="display:flex;"><span>    converted_text <span style="color:#f92672">=</span> converter<span style="color:#f92672">.</span>get_html_page(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> converted_text <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;quote: &#39; &#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">access_second_page</span>():
+</span></span><span style="display:flex;"><span>    fake_file <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>StringIO(<span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">page one
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">PAGE_BREAK
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">page two
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">PAGE_BREAK
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">page three
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>    converter <span style="color:#f92672">=</span> HtmlPagesConverter(open_file<span style="color:#f92672">=</span>fake_file)
+</span></span><span style="display:flex;"><span>    converted_text <span style="color:#f92672">=</span> converter<span style="color:#f92672">.</span>get_html_page(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> converted_text <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;page two&lt;br /&gt;&#34;</span>
+</span></span></code></pre></div><h3 id="dummy">
+  Dummy
+  <a class="anchor" href="#dummy">#</a>
+</h3>
+<p>a Dummy is not used, usually is None, because the argument is mandatory</p>
+<h3 id="spy">
+  Spy
+  <a class="anchor" href="#spy">#</a>
+</h3>
+<p>a Spy records the method calls it receives</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SingleSignOnRegistry</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyService</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, sso_registry):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>sso_registry <span style="color:#f92672">=</span> sso_registry
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle</span>(self, request, sso_token):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> sso_token:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Response(<span style="color:#e6db74">&#34;Yes&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Response(<span style="color:#e6db74">&#34;No&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Request</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Response</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, text):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>text <span style="color:#f92672">=</span> text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_sso</span>():
+</span></span><span style="display:flex;"><span>    spy_sso_registry <span style="color:#f92672">=</span> Mock(SingleSignOnRegistry)
+</span></span><span style="display:flex;"><span>    service <span style="color:#f92672">=</span> MyService(spy_sso_registry)
+</span></span><span style="display:flex;"><span>    token <span style="color:#f92672">=</span> SSOToken
+</span></span><span style="display:flex;"><span>    service<span style="color:#f92672">.</span>handle(Request(<span style="color:#e6db74">&#34;Emily&#34;</span>), token)
+</span></span><span style="display:flex;"><span>    spy_sso_registry<span style="color:#f92672">.</span>is_valid<span style="color:#f92672">.</span>assert_called_with(token)
+</span></span></code></pre></div><h3 id="mock">
+  Mock
+  <a class="anchor" href="#mock">#</a>
+</h3>
+<p>a Mock expect certain method calls, otherwise raise an error</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">confirm_token</span>(token):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_valid</span>(actual_token):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> actual_token <span style="color:#f92672">!=</span> token:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;wrong token&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> is_valid
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_sso</span>():
+</span></span><span style="display:flex;"><span>    mock_sso_registry <span style="color:#f92672">=</span> Mock(SingleSignOnRegistry)
+</span></span><span style="display:flex;"><span>    token <span style="color:#f92672">=</span> SSOToken
+</span></span><span style="display:flex;"><span>    mock_sso_registry<span style="color:#f92672">.</span>is_valid <span style="color:#f92672">=</span> Mock(side_effect<span style="color:#f92672">=</span>confirm_token(token))
+</span></span><span style="display:flex;"><span>    service <span style="color:#f92672">=</span> MyService(mock_sso_registry)
+</span></span><span style="display:flex;"><span>    service<span style="color:#f92672">.</span>handle(Request(<span style="color:#e6db74">&#34;Emily&#34;</span>), token)
+</span></span><span style="display:flex;"><span>    mock_sso_registry<span style="color:#f92672">.</span>is_valid<span style="color:#f92672">.</span>assert_called_with(token)
+</span></span></code></pre></div><h2 id="monkey-patching">
+  Monkey Patching
+  <a class="anchor" href="#monkey-patching">#</a>
+</h2>
+<p>exchange code after runtime, for example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># can&#39;t replace this one</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>_sensor <span style="color:#f92672">=</span> Sensor()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># by this one</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> __init__(self, sensor<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>_sensor <span style="color:#f92672">=</span> sensor <span style="color:#f92672">or</span> Sensor()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> unittest.mock <span style="color:#f92672">import</span> patch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_alarm</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> patch(package<span style="color:#f92672">.</span>Class) <span style="color:#66d9ef">as</span> test_package_class:
+</span></span><span style="display:flex;"><span>        test_class_instance <span style="color:#f92672">=</span> Mock()
+</span></span><span style="display:flex;"><span>        test_class_instance<span style="color:#f92672">.</span>method_or_attribute<span style="color:#f92672">.</span>return_value <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>
+</span></span><span style="display:flex;"><span>        test_package_class<span style="color:#f92672">.</span>return_value <span style="color:#f92672">=</span> test_class_instance
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@patch</span>(<span style="color:#e6db74">&#34;alarm.Sensor&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_alarm</span>(test_package_class):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> patch(package<span style="color:#f92672">.</span>Class) <span style="color:#66d9ef">as</span> test_package_class:
+</span></span><span style="display:flex;"><span>        test_class_instance <span style="color:#f92672">=</span> Mock()
+</span></span><span style="display:flex;"><span>        test_class_instance<span style="color:#f92672">.</span>method_or_attribute<span style="color:#f92672">.</span>return_value <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>
+</span></span><span style="display:flex;"><span>        test_package_class<span style="color:#f92672">.</span>return_value <span style="color:#f92672">=</span> test_class_instance
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@patch</span>(<span style="color:#e6db74">&#34;builtins.open&#34;</span>, new_callable<span style="color:#f92672">=</span>mock_open, read_data<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;quote : &#39; &#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_builtin</span>(fake_file):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> 
+</span></span></code></pre></div><h2 id="parameterized-tests-and-test-coverage">
+  Parameterized tests and test coverage
+  <a class="anchor" href="#parameterized-tests-and-test-coverage">#</a>
+</h2>
+<p>useful :</p>
+<ul>
+<li>to spot missing tests for new code</li>
+<li>to add tests to existing code</li>
+<li>to track trends over time</li>
+</ul>
+<p>evaluating test quality :</p>
+<ul>
+<li>bugs in production</li>
+<li>confidence to refactor</li>
+<li>unrealiable tests</li>
+<li>code review</li>
+<li>onboarding time</li>
+<li>mutation testing</li>
+</ul>
+<p><code>pytest --cov-report html:cov_html --cov-branch --cov=package_name .</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.mark.parametrize</span>(<span style="color:#e6db74">&#34;p1, p2&#34;</span>, 
+</span></span><span style="display:flex;"><span>    [(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>), 
+</span></span><span style="display:flex;"><span>    (<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_parameterized</span>(p1, p2):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> p1 <span style="color:#f92672">&gt;</span> p2
+</span></span></code></pre></div><h1 id="advanced-python">
+  Advanced Python
+  <a class="anchor" href="#advanced-python">#</a>
+</h1>
+<h2 id="while-else">
+  While else
+  <a class="anchor" href="#while-else">#</a>
+</h2>
+<p>should not be used, but it exists</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> condition:
+</span></span><span style="display:flex;"><span>    execute_if_true()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>: <span style="color:#75715e"># nobreak</span>
+</span></span><span style="display:flex;"><span>    execute_when_false()
+</span></span></code></pre></div><h2 id="for-else">
+  For else
+  <a class="anchor" href="#for-else">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> iterable:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> item <span style="color:#f92672">is</span> genial:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>: <span style="color:#75715e">#nobreak - no match found</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span></code></pre></div><h2 id="try-else">
+  Try else
+  <a class="anchor" href="#try-else">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span></code></pre></div><h2 id="dispath-on-type">
+  Dispath on Type
+  <a class="anchor" href="#dispath-on-type">#</a>
+</h2>
+<p>useful for separation of concerns</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> singledispatch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@singledispatch</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do</span>(s):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;unknown type&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@do.register</span>(A)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_do_A</span>(s):
+</span></span><span style="display:flex;"><span>    print(s)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@do.register</span>(B)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_do_B</span>(s):
+</span></span><span style="display:flex;"><span>    print(s)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># if need to use dispatch in a class method</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">S</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do</span>(self, s):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> dispatch_do(s, self) <span style="color:#75715e"># double dispatch class.method(other_class)</span>
+</span></span></code></pre></div><h2 id="byte-oriented-programming">
+  Byte oriented programming
+  <a class="anchor" href="#byte-oriented-programming">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>bb <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;This is okay because it&#39;s 7bit ASCII&#34;</span>
+</span></span><span style="display:flex;"><span>bb[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> an integer
+</span></span><span style="display:flex;"><span>bb[<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">4</span>] <span style="color:#f92672">=</span> bytes[]
+</span></span></code></pre></div><h3 id="interpreting-binary-structures">
+  Interpreting binary structures
+  <a class="anchor" href="#interpreting-binary-structures">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> Vector {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> x; <span style="color:#75715e">// 32-bit (!= 64-bit in python)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">float</span> y;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> z;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> Color {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">short</span> <span style="color:#66d9ef">int</span> red; <span style="color:#75715e">// 16-bit
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">short</span> <span style="color:#66d9ef">int</span> green;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">short</span> <span style="color:#66d9ef">int</span> blue;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> Vertex {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> Vector position;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> Color color;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> struct
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://docs.python.org/3/library/struct.html</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;data.bin&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    buffer <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hex_buffer <span style="color:#f92672">=</span> hexlify(buffer)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;ascii&#39;</span>)
+</span></span><span style="display:flex;"><span>hex_pairs <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(hex_buffer[i:i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(hex_buffer), <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>items <span style="color:#f92672">=</span> struct<span style="color:#f92672">.</span>unpack_from(<span style="color:#e6db74">&#34;@fffHHHxx&#34;</span>, buffer)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @ = native (little-endian = &#34;&lt;&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># f = C-float - 3f</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># H = C-unsigned short int - 3H</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># x = padding (C wants to pad struct to a multiple of 4 bits)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>v <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> items <span style="color:#f92672">in</span> struct<span style="color:#f92672">.</span>iter_unpack(<span style="color:#e6db74">&#34;@fffHHHxx&#34;</span>, buffer):
+</span></span><span style="display:flex;"><span>    v<span style="color:#f92672">.</span>append(newVertex(items))
+</span></span></code></pre></div><p>We can also use <code>memoryview</code> to avoid duplication of data (zero-copy)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mem <span style="color:#f92672">=</span> memoryview(buffer)
+</span></span><span style="display:flex;"><span>code<span style="color:#f92672">.</span>interact(local<span style="color:#f92672">=</span>locals()) 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># stop the program and launch the python interpreter</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># with the variables loaded</span>
+</span></span><span style="display:flex;"><span>mem[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">12</span>]<span style="color:#f92672">.</span>cast(<span style="color:#e6db74">&#34;f&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># a slice of a memoryview is a memoryview</span>
+</span></span></code></pre></div><p>Memory-mapped files are useful to avoid copying the data</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> mmap
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;data.bin&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> mmap<span style="color:#f92672">.</span>mmap(f<span style="color:#f92672">.</span>fileno(), <span style="color:#ae81ff">0</span>, access<span style="color:#f92672">=</span>mmap<span style="color:#f92672">.</span>ACCESS_READ) <span style="color:#66d9ef">as</span> buffer:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># buffer is now a memory-mapped file - zero copy</span>
+</span></span><span style="display:flex;"><span>        mem <span style="color:#f92672">=</span> memoryview(buffer)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># dont forget to delete pointer to the buffer and memory views</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">del</span> mem
+</span></span></code></pre></div><h2 id="memory-efficiency">
+  Memory efficiency
+  <a class="anchor" href="#memory-efficiency">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Resistor</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    __slots__ <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;resistance&#39;</span>, <span style="color:#e6db74">&#39;tolerance&#39;</span>, <span style="color:#e6db74">&#39;power&#39;</span>] 
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># set the final number of attributes, no moore attribute can be added</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># size from 152 bytes to 64 bytes</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, resistance, tolerance, power):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>resistance <span style="color:#f92672">=</span> resistance
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>tolerance <span style="color:#f92672">=</span> tolerance
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>power <span style="color:#f92672">=</span> power
+</span></span></code></pre></div><h2 id="descriptors">
+  Descriptors
+  <a class="anchor" href="#descriptors">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> weakref <span style="color:#f92672">import</span> WeakKeyDictionary
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Positive</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_instance_data <span style="color:#f92672">=</span> WeakKeyDictionary()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __get__(self, instance, owner):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_instance_data[instance]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __set__(self, instance, value):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> value <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_instance_data[instance] <span style="color:#f92672">=</span> value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __delete__(self, instance):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">AttributeError</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, a):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>a <span style="color:#f92672">=</span> a <span style="color:#75715e"># set through descriptor</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># replacing property by our own descriptor Positive</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">a</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_a
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@a.setter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">a</span>(self, value):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> a <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_a <span style="color:#f92672">=</span> a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> Positive()
+</span></span></code></pre></div><h2 id="instance-creatioon">
+  Instance creatioon
+  <a class="anchor" href="#instance-creatioon">#</a>
+</h2>
+<p>Class is instanciated via the <code>__new__</code> method inherited from <code>object</code>.</p>
+<h2 id="metaclasses">
+  Metaclasses
+  <a class="anchor" href="#metaclasses">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Widget&#39;</span>
+</span></span><span style="display:flex;"><span>metaclass <span style="color:#f92672">=</span> type
+</span></span><span style="display:flex;"><span>bases <span style="color:#f92672">=</span> ()
+</span></span><span style="display:flex;"><span>kwargs <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>namespace <span style="color:#f92672">=</span> metaclass<span style="color:#f92672">.</span>__prepare__(name, bases, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>Widget <span style="color:#f92672">=</span> metaclass<span style="color:#f92672">.</span>__new__(metaclass, name, bases, namespace, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>metaclass<span style="color:#f92672">.</span>__init__(Widget, name, bases, namespace, <span style="color:#f92672">**</span>kwargs)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Widget</span>(object, metaclass<span style="color:#f92672">=</span>type):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __new__(cls, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> type<span style="color:#f92672">.</span>__new__(cls)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># type example</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __call__(cls, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>        obj <span style="color:#f92672">=</span> cls<span style="color:#f92672">.</span>__new__(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>        obj<span style="color:#f92672">.</span>__init__(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> obj
+</span></span></code></pre></div><p><code>w = Widget()</code> triggers <code>metaclass.__call__()</code> which calls <code>Widget.__new__()</code> and <code>Widget.__init__()</code></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#repr---__repr__">repr() &gt;  <strong>repr</strong></a></li>
+    <li><a href="#str---__str__">str()  &gt; <strong>str</strong></a></li>
+    <li><a href="#parameterformat--__format__self-f">&ldquo;{:parameter}&quot;.format &gt; <strong>format</strong>(self, f)</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#decimal-type">Decimal type</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#types">Types</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#tox">Tox</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#unittest-module">Unittest module</a></li>
+    <li><a href="#pytest-module">Pytest module</a></li>
+    <li><a href="#testable-documentation-with-doctest">Testable Documentation with doctest</a></li>
+    <li><a href="#test-doubles--mocks-stubs-and-fakes">Test Doubles : Mocks, Stubs and Fakes</a>
+      <ul>
+        <li><a href="#stub">Stub</a></li>
+        <li><a href="#fake">Fake</a></li>
+        <li><a href="#dummy">Dummy</a></li>
+        <li><a href="#spy">Spy</a></li>
+        <li><a href="#mock">Mock</a></li>
+      </ul>
+    </li>
+    <li><a href="#monkey-patching">Monkey Patching</a></li>
+    <li><a href="#parameterized-tests-and-test-coverage">Parameterized tests and test coverage</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#while-else">While else</a></li>
+    <li><a href="#for-else">For else</a></li>
+    <li><a href="#try-else">Try else</a></li>
+    <li><a href="#dispath-on-type">Dispath on Type</a></li>
+    <li><a href="#byte-oriented-programming">Byte oriented programming</a>
+      <ul>
+        <li><a href="#interpreting-binary-structures">Interpreting binary structures</a></li>
+      </ul>
+    </li>
+    <li><a href="#memory-efficiency">Memory efficiency</a></li>
+    <li><a href="#descriptors">Descriptors</a></li>
+    <li><a href="#instance-creatioon">Instance creatioon</a></li>
+    <li><a href="#metaclasses">Metaclasses</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

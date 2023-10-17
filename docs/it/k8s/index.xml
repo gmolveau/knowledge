@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/it/k8s/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/it/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/k8s/k8s/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/k8s/k8s/</guid>
+      <description> kubernetes / k8s # minikube : https://minikube.sigs.k8s.io/docs/ microk8s : https://microk8s.io/ k3s : https://k3s.io/ resources # https://buttondown.email/nelhage/archive/two-reasons-kubernetes-is-so-complex/#fn:frontload https://nikhiljha.com/posts/kubernetes-intro/ This design makes you deal up-front with practicalities you might otherwise have ignored for a long time.
+https://www.suse.com/c/rancher_blog/best-practices-for-monitoring-and-alerting-on-kubernetes/ https://www.suse.com/c/rancher_blog/building-an-automated-deployment-process-with-kubernetes-ci-cd/ https://martinheinz.dev/blog/49 </description>
+    </item>
+    
+  </channel>
+</rss>

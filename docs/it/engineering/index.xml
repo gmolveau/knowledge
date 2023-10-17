@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gregouz Knowledge</title>
+    <link>https://gmolveau.github.io/knowledge/docs/it/engineering/</link>
+    <description>Recent content on Gregouz Knowledge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://gmolveau.github.io/knowledge/docs/it/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://gmolveau.github.io/knowledge/docs/it/engineering/engineering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmolveau.github.io/knowledge/docs/it/engineering/engineering/</guid>
+      <description> Software Engineering # Resources # https://martinrue.com/my-engineering-axioms/ Out of the tar pit (2006) https://curtclifton.net/papers/MoseleyMarks06a.pdf https://mcfunley.com/choose-boring-technology https://www.brandons.me/blog/write-code-not-too-much-mostly-functions https://jvns.ca/blog/learn-how-things-work/ https://cprimozic.net/blog/programming-speed-strategies/ </description>
+    </item>
+    
+  </channel>
+</rss>
