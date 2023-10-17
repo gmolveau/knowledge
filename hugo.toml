@@ -1,4 +1,4 @@
-baseURL = 'gmolveau.github.io/knowledge/'
+baseURL = 'https://gmolveau.github.io/knowledge/'
 languageCode = 'en-us'
 title = 'Gregouz Knowledge'
 theme = 'book'
