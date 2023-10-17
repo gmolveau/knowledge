@@ -1,3 +1,7 @@
++++
+title = 'Organization'
++++
+
 - Preparing your environment (painless context switch)
 - Work in Small steps
 - Mental warm-up before each session.

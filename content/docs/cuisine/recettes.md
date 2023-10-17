@@ -1,6 +1,10 @@
++++
+title = 'Recettes'
++++
+
 - risoto de pâtes chorizo
 
-ingrédients : 
+ingrédients :
 2 chorizos entiers
 2 oignons
 creme fraiche 25cL
